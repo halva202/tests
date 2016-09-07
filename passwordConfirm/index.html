@@ -51,7 +51,7 @@
 	
 		document.getElementById('jQueryManipulation').innerHTML = '<br><p><font color="blue">jQuery-manipulation</font></p>';
 		
-		if(!f.patternPassword.test(f.password)){
+		if(!f.patternPassword().test(f.password)){
 			document.getElementById('reliabilityOfPassword').innerHTML = '<p><font color="red">пароль должен состоять минимум из 5 символов, при этом в пароле должны быть как минимум одна цифра и буква (буквы только латинские) </font></p>';
 		}
 		else{document.getElementById('reliabilityOfPassword').innerHTML = '<p>good password</p>';}
@@ -89,7 +89,7 @@
 		// /заполненность полей формы (due to "required" {html5} this code can be removed)
 		
 		// соответствует ли password требованиям
-		if(!f.patternPassword.test(password)){
+		if(!f.patternPassword().test(password)){
 			document.getElementById('passwordNote').innerHTML = '<p><font color="red">пароль должен состоять минимум из 5 символов, при этом в пароле должны быть как минимум одна цифра и буква (буквы только латинские) </font></p>';
 			return false;
 		}
